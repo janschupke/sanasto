@@ -1,0 +1,350 @@
+/*
+ * Specific application theme,
+ * should contain purely cosmetic styles.
+ */
+
+/* ---------------------------------------- */
+/* Variables */
+
+@defaultBorder: #dddddd;
+@toolbarBorder: #eeeeee;
+
+@textColor: #333333;
+@navbarTextColor: #eeeeee;
+
+@defaultColor: #ffffff;
+@defaultHover: #dadada;
+
+@primaryColor: #335cd6;
+@primaryHover: #0047B2;
+
+@dangerColor: #d63333;
+@dangerHover: #990000;
+
+@successColor: #169316;
+@successHover: #0F670F;
+
+@formBorderFocus: #0066ff;
+
+@signatureColor: #bbbbbb;
+@signatureHover: #555555;
+
+@tableEntryNumber: #999999;
+
+@shadowColor: rgba(80, 80, 80, 0.75);
+
+/* ---------------------------------------- */
+/* General styling */
+
+body {
+    color: @textColor;
+}
+
+h3 {
+    border-bottom: 1px solid @defaultBorder;
+}
+
+a {
+    color: @primaryColor;
+}
+
+a:hover {
+    color: @primaryHover;
+}
+
+.text-danger {
+    color: @dangerColor;
+}
+
+.text-success {
+    color: @successColor;
+}
+
+.badge {
+    background-color: @primaryColor;
+}
+
+.hint {
+    color: @tableEntryNumber;
+}
+
+img.lightboxImage {
+    border: 3px solid @defaultBorder;
+}
+
+img.lightboxImage:hover {
+    border: 3px solid @primaryColor;
+}
+
+/* ---------------------------------------- */
+/* Navbar */
+
+@navbarShadowSize: 0px 0px 8px 0px;
+
+.navbar.navbar-default {
+    background-color: @primaryColor;
+    -webkit-box-shadow: @navbarShadowSize @shadowColor;
+    -moz-box-shadow: @navbarShadowSize @shadowColor;
+    box-shadow: @navbarShadowSize @shadowColor;
+}
+
+.navbar.navbar-default * {
+    color: @navbarTextColor !important;
+}
+
+.navbar.navbar-default button {
+    background-color: @primaryColor !important;
+    border-color: @primaryHover;
+}
+
+.navbar.navbar-default button:hover {
+    background-color: @primaryHover !important;
+}
+
+.navbar.navbar-default .navbar-header button span {
+    background-color: @navbarTextColor !important;
+}
+
+.navbar.navbar-default ul.nav li a:hover,
+.navbar.navbar-default ul.nav li.active a {
+    background-color: @primaryHover;
+}
+
+.navbar.navbar-default ul.navbar-right li.dropdown > a {
+    background-color: @primaryColor;
+}
+
+.navbar.navbar-default ul.navbar-right li.dropdown > a:hover,
+.navbar.navbar-default ul.navbar-right li.dropdown > a:hover span {
+    background-color: @primaryColor;
+    color: @textColor !important;
+}
+
+.navbar.navbar-default ul.navbar-right li.dropdown ul li a:hover,
+.navbar.navbar-default ul.navbar-right li.dropdown ul li.active a {
+    background-color: @primaryColor;
+    color: @navbarTextColor !important;
+}
+
+.navbar.navbar-default ul.navbar-right li.dropdown ul li.active a:hover {
+    background-color: @primaryHover;
+}
+
+.navbar.navbar-default li.dropdown > ul > li > a {
+    color: @textColor !important;
+}
+
+@media screen and (max-width: 767px) {
+    .navbar.navbar-default ul.navbar-right li.dropdown > a:hover,
+    .navbar.navbar-default ul.navbar-right li.dropdown > a:hover span {
+        background-color: @primaryHover;
+        color: @navbarTextColor !important;
+    }
+
+    .navbar.navbar-default ul.navbar-right li.dropdown ul li a:hover,
+    .navbar.navbar-default ul.navbar-right li.dropdown ul li.active a {
+        background-color: @primaryHover;
+    }
+
+    .navbar.navbar-default ul.navbar-right li.dropdown ul li.active a:hover {
+        color: @navbarTextColor !important;
+        background-color: @primaryHover;
+    }
+
+    .navbar.navbar-default li.dropdown > ul > li > a {
+        color: @navbarTextColor !important;
+    }
+}
+
+.navbar a.name sup {
+    color: @dangerColor !important;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* ---------------------------------------- */
+/* Paginator */
+
+ul.paginator li a {
+    border-color: @defaultBorder !important;
+}
+
+ul.pagination li.active a:hover,
+ul.pagination li.active a {
+    background-color: @primaryColor;
+}
+
+ul.pagination li a {
+    color: @primaryColor;
+}
+
+/* ---------------------------------------- */
+/* Toolbar */
+
+.toolbar .dropdownItem a {
+    border: 1px solid @defaultColor;
+    border-bottom: @toolbarBorder;
+}
+
+.toolbar .dropdownItem a:hover {
+    border: 1px solid @toolbarBorder;
+}
+
+.toolbar .dropdown-menu li a:hover,
+.toolbar .dropdown-menu li.active a {
+    background-color: @primaryColor;
+    color: @navbarTextColor;
+}
+
+/* ---------------------------------------- */
+/* Foot */
+
+.signature,
+.signature a,
+.signature a:hover {
+    color: @signatureColor;
+}
+
+.foot:hover li.signature,
+.foot:hover li.signature a {
+    color: @signatureHover !important;
+}
+
+/* ---------------------------------------- */
+/* Forms */
+
+.form-control:focus {
+    border-color: @formBorderFocus;
+}
+
+/* ---------------------------------------- */
+/* Tables */
+
+.entryNumber {
+    color: @tableEntryNumber;
+}
+
+th, th a {
+    color: @textColor;
+}
+
+/* ---------------------------------------- */
+/* Buttons */
+
+.btn-default {
+    background-color: @defaultColor;
+}
+
+.btn-default:hover {
+    background-color: @defaultHover;
+}
+
+.btn-primary {
+    background-color: @primaryColor;
+}
+
+.btn-primary:hover {
+    background-color: @primaryHover;
+}
+
+.btn-danger {
+    background-color: @dangerColor;
+}
+
+.btn-danger:hover {
+    background-color: @dangerHover;
+}
+
+.btn-success {
+    background-color: @successColor;
+}
+
+.btn-success:hover {
+    background-color: @successHover;
+}
+
+/* ---------------------------------------- */
+/* Icons */
+
+.remove a,
+.disabled a {
+    color: @dangerColor;
+}
+
+.remove a:hover,
+.disabled a:hover {
+    color: @dangerHover;
+}
+
+.enabled a {
+    color: @successColor;
+}
+
+.enabled a:hover {
+    color: @successHover;
+}
+
+/* ---------------------------------------- */
+/* Panels */
+
+.panel-primary {
+    border-color: @primaryColor;
+}
+
+.panel-primary .panel-heading {
+    background-color: @primaryColor;
+}
+
+.panel-danger {
+    border-color: @dangerColor;
+}
+
+.panel-danger .panel-heading {
+    color: @navbarTextColor;
+    background-color: @dangerColor;
+}
+
+.panel-success {
+    border-color: @successColor;
+}
+
+.panel-success .panel-heading {
+    color: @navbarTextColor;
+    background-color: @successColor;
+}
+
+/* ---------------------------------------- */
+/* Alerts */
+
+.alert-danger {
+    color: @dangerColor;
+}
+
+.alert-success {
+    color: @successColor;
+}
+
+.alert-info {
+    color: @primaryColor;
+}
+
+/* ---------------------------------------- */
+/* Various shadows */
+
+@buttonShadowSize: 0px 0px 1px 0px;
+
+.badge,
+.btn:not(.btn-default),
+.panel {
+    -webkit-box-shadow: @buttonShadowSize @shadowColor;
+    -moz-box-shadow: @buttonShadowSize @shadowColor;
+    box-shadow: @buttonShadowSize @shadowColor;
+}
+
+@partialShadowSize: 0px 0px 6px 0px;
+
+.shadowBlock {
+    -webkit-box-shadow: @partialShadowSize @shadowColor;
+    -moz-box-shadow: @partialShadowSize @shadowColor;
+    box-shadow: @partialShadowSize @shadowColor;
+}

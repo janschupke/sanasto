@@ -1,0 +1,535 @@
+/*
+ * Main structural style of the application,
+ * contain necessary styling to make the application operational.
+ */
+
+/* ---------------------------------------- */
+/* Variables */
+
+@defaultBorder: #dddddd;
+@noBg: #ffffff;
+
+/* ---------------------------------------- */
+/* Screen wrap */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    padding-top: 60px;
+}
+
+#wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+/* ---------------------------------------- */
+/* General styles */
+
+hr {
+    margin-top: 3px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    margin-top: 5px;
+    font-size: 210%;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 165%;
+    font-weight: bold;
+}
+
+h2 .badge {
+    position: relative;
+    top: -3px;
+}
+
+h2.subtitle {
+    margin-top: 18px;
+    margin-bottom: 6px;
+}
+
+h3 {
+    font-size: 140%;
+}
+
+h3.subsection {
+    margin-top: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.centered {
+    text-align: center;
+}
+
+.justify {
+    text-align: justify;
+}
+
+@media screen and (min-width: 767px) {
+    .lead {
+        font-size: 125%;
+    }
+}
+
+td.bold {
+    width: 250px;
+}
+
+.candidateRadio {
+    text-align: center;
+}
+
+.controlPanel {
+    text-align: right;
+    padding-top: 10px;
+}
+
+.controlPanel input[type=text] {
+    min-width: 250px;
+}
+
+.infoSpan {
+    cursor: default;
+}
+
+.noElementsRow {
+    text-align: center;
+    font-style: italic;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    border-bottom: 1px solid @defaultBorder;
+}
+
+.pageFloat {
+    float: right;
+    max-width: 300px;
+    margin-left: 40px;
+}
+
+.notBold {
+    font-weight: normal;
+}
+
+img.clipart {
+    width: 220px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+img.lightboxImage {
+    width: 180px;
+    height: 125px;
+    padding: 5px;
+    margin-top: 6px;
+    margin-right: 3px;
+}
+
+.hint {
+    font-style: italic;
+}
+
+/* ---------------------------------------- */
+/* Shadowed elements */
+
+.shadowBlock {
+    margin-left: 15px;
+    margin-right: 20px;
+    margin-bottom: 25px;
+    padding: 25px;
+}
+
+fieldset.shadowBlock,
+.shadowBlock.inForm {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+fieldset.shadowBlock {
+    margin-top: 40px;
+}
+
+fieldset.shadowBlock.inForm {
+    padding-top: 0px;
+}
+
+fieldset.shadowBlock legend {
+    position: relative;
+    top: -20px;
+    left: -25px;
+}
+
+@indexFormWidth: 450px;
+
+.indexForm {
+    border: 1px solid @defaultBorder;
+    float: right;
+    min-width: @indexFormWidth;
+    margin-left: 25px;
+    margin-right: 0px;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 767px) {
+    .indexForm {
+        float: none;
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+}
+
+.indexForm p {
+    max-width: calc(@indexFormWidth - 60px);
+}
+
+/* ---------------------------------------- */
+/* Pagination */
+
+.pagination {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.paginationSelect {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    max-width: 70px;
+}
+
+button.paginationSelect {
+    margin-right: 20px;
+}
+
+.paginationIndent {
+    margin-top: 10px;
+}
+
+/* ---------------------------------------- */
+/* Tables */
+
+.table {
+    margin-bottom: 10px;
+}
+
+td.entryNumber {
+    width: 40px;
+}
+
+th, th a, th a:hover {
+    text-decoration: none;
+}
+
+/* ---------------------------------------- */
+/* Forms */
+
+.form-group {
+    margin-bottom: 7px;
+}
+
+.form-group .css-checkbox,
+.form-group .css-checkbox-label {
+    margin-top: 8px;
+}
+
+.indentedForm {
+    margin-top: 25px;
+}
+
+.errorMessage {
+    display: none;
+    position: relative;
+    left: 1px;
+    top: 5px;
+}
+
+.maintenanceDetail {
+    display: none;
+    position: relative;
+    top: -10px;
+}
+
+/* ---------------------------------------- */
+/* File input */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: @noBg;
+    cursor: inherit;
+    display: block;
+}
+
+input[readonly] {
+    background-color: @noBg !important;
+    cursor: text !important;
+}
+
+/* ---------------------------------------- */
+/* Toolbar */
+
+.toolbar .collapse {
+    padding: 0px;
+}
+
+.toolbar .nav > li > a {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+@media screen and (max-width: 767px) {
+    .toolbarToggle {
+        margin: 0px;
+        margin-right: -1px;
+        padding: 0px !important;
+    }
+
+    .toolbar ul.nav {
+        border-top: 1px solid @defaultBorder;
+    }
+
+    .toolbar ul.nav li {
+        width: 100%;
+        float: none;
+    }
+
+    .toolbar ul.nav li a {
+        border: none !important;
+    }
+
+    .toolbar ul.nav li.active a {
+        font-weight: bold;
+    }
+}
+
+/* ---------------------------------------- */
+/* Foot */
+
+.foot {
+    border-top: 1px solid @defaultBorder;
+    margin: 14px auto 0px auto;
+    padding-bottom: 15px;
+}
+
+.footNav ul {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+.footNav ul li {
+    float: left;
+    padding-right: 35px;
+}
+
+.signature,
+.signature a,
+.signature a:hover {
+    font-style: italic;
+}
+
+li.signature {
+    padding-right: 10px !important;
+}
+
+@media screen and (max-width: 700px) {
+    .foot ul li {
+        width: 100%;
+        float: none;
+    }
+
+    .foot ul li a {
+        display: block;
+        width: 100%;
+        padding-top: 5px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .foot ul li.signature {
+        width: 100%;
+        float: none;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .foot ul li.signature a {
+        display: inline;
+    }
+}
+
+/* ---------------------------------------- */
+/* Buttons, icons */
+
+.buttonBar {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+.buttonBar li {
+    float: right;
+    padding-left: 5px;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.resultButton {
+    width: 20px;
+    text-align: center;
+    padding: 0px !important;
+}
+
+.resultButton a,
+.resultButton .boolean {
+    display: block;
+    width: 100%;
+    margin: 0px;
+    padding-top: 9px;
+    padding-bottom: 7px;
+}
+
+/* ---------------------------------------- */
+/* Modal styling */
+
+#languageModal .modal-dialog {
+    max-width: 400px;
+}
+
+@media screen and (max-width: 767px) {
+    #languageModal .modal-dialog {
+        width: 96%;
+        max-width: 96%;
+    }
+}
+
+#languageModal ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+/* ---------------------------------------- */
+/* Bootstrap overrides */
+
+.navbar {
+    min-height:30px;
+}
+
+.navbar.navbar-default {
+    border: 0px;
+}
+
+.navbar.navbar-default button {
+    margin-top: 5px;
+    margin-bottom: 4px;
+}
+
+.navbar.navbar-default .navbar-nav > li > a {
+    padding-top: 12px;
+    padding-bottom: 11px;
+}
+
+.navbar.navbar-default .navbar-brand {
+    padding-top: 12px;
+    padding-bottom: 11px;
+    height: 100%;
+}
+
+.navbar.navbar-default .navbar-brand img {
+    height: 30px;
+}
+
+.navbar.navbar-default .navbar-brand.logo {
+    padding: 7px 15px 6px 15px;
+}
+
+.navbar.navbar-default .navbar-brand.name {
+    margin-left: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.alert {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+}
+
+.alert a {
+    text-decoration: underline;
+}
+
+.alert a:hover {
+    text-decoration: none;
+}
+
+*:not(.badge):not(.alert) {
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+
+.conflictPanel .panel-body {
+    padding-right: 7px;
+}
+
+.conflictPanel ul {
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.conflictPanel li {
+    border: none;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+/* ---------------------------------------- */
+/* Modals */
+
+.modal-dialog {
+    top: 20%;
+}
+
+@modalFadeTime: 0.1s;
+
+.modal.fade .modal-dialog {
+    -webkit-transform: translate(0, -25%);
+    -ms-transform: translate(0, -25%);
+    transform: translate(0, -25%);
+    -webkit-transition: -webkit-transform @modalFadeTime ease-out;
+    -moz-transition: -moz-transform @modalFadeTime ease-out;
+    -o-transition: -o-transform @modalFadeTime ease-out;
+    transition: transform @modalFadeTime ease-out;
+}
+
+/* ---------------------------------------- */
+/* Re-Captcha */
+
+.captchaField {
+    position: relative;
+    left: 2px;
+}

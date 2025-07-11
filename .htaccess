@@ -1,0 +1,89 @@
+AcceptPathInfo On
+
+php_value include_path .:/home/vehicle/dev/sanasto-core
+#php_value include_path .:/home/sanasto/public_html
+
+############################################
+ErrorDocument 403 /app/module/error/403
+ErrorDocument 404 /app/module/error/404
+ErrorDocument 500 /app/module/error/500
+
+############################################
+RewriteEngine On
+RewriteBase /
+
+# Forbidden methods
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+RewriteRule .* - [F]
+
+# Trims multiple forward slashes in the requested URL
+RewriteCond %{REQUEST_URI} ^(.*)//(.*)$
+RewriteRule . %1/%2 [L,R=301]
+
+############################################
+# Forbidden paths
+RewriteCond %{REQUEST_URI} ^/files
+RewriteRule (.*) /error/403 [L,R=301]
+
+############################################
+# Query ID strings
+# Adds slash after the ID
+RewriteCond %{REQUEST_URI} !^(.*)/error
+RewriteRule (.*)/([0-9]+)$ $1/$2/ [L,R=301]
+
+# Query paging strings
+# Parses the page request into query string
+RewriteCond %{REQUEST_URI} !^(.*)/error
+RewriteCond %{REQUEST_URI} ^(.*)/pages/(.*)
+RewriteRule (.*)/pages/([0-9]+)/$ $1/?page=$2 [L,QSA]
+RewriteRule (.*)/pages/([0-9A-Za-z]+)/$ $1 [L,QSA]
+
+# Query ID strings
+# Parses the ID into query string
+RewriteCond %{REQUEST_URI} !^(.*)/error
+RewriteCond %{REQUEST_URI} !^(.*)/pages/(.*)
+RewriteRule (.*)/([0-9]+)/$ $1/?id=$2 [L,QSA]
+
+############################################
+# Misspelled URLs cause loops, this prevents it
+RewriteCond %{REQUEST_URI} app/module/app
+RewriteRule (.*) error/404/ [L,R]
+
+############################################
+# Modules without slash
+RewriteRule ^account$ account/overview/ [L,R=301]
+RewriteRule ^admin$ admin/accounts/ [L,R=301]
+RewriteRule ^collection$ collection/words/ [L,R=301]
+RewriteRule ^test$ test/results/ [L,R=301]
+
+# Modules with slash
+RewriteRule ^account/$ account/overview/ [L,R=301]
+RewriteRule ^admin/$ admin/accounts/ [L,R=301]
+RewriteRule ^collection/$ collection/words/ [L,R=301]
+RewriteRule ^test/$ test/results/ [L,R=301]
+
+############################################
+# Root and MOD_INDEX rewrites
+RewriteRule ^$ index/about/ [L]
+RewriteRule ^([a-zA-Z-]+)/$ index/$1/ [L]
+
+############################################
+# PHP request redirects
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.php
+RewriteRule ^/?(.*)\.php$ $1 [L,R=301]
+
+# Handling requests without extension
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^/?(.*)$ $1.php [L]
+
+############################################
+# Adding trailing slash to the address field
+RewriteCond %{REQUEST_URI} !(/$|\.)
+RewriteRule (.*) %{REQUEST_URI}/ [L,R=301]
+
+# Removing trailing slash for internal processing
+RewriteCond %{REQUEST_URI} (.*)/$
+RewriteRule ^(.*)/$ app/module/$1 [L]
+
+############################################
+Options -Indexes

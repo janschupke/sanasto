@@ -1,0 +1,11 @@
+{
+  "name": "sanasto-core",
+  "version": "0.1.0",
+  "description": "Sanasto application",
+  "author": "Jan Schupke",
+  "private": true,
+  "dependencies": {
+    "bower": "1.4.1",
+    "less": "2.4.0"
+  }
+}

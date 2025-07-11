@@ -1,0 +1,10 @@
+{
+  "name": "sanasto-core",
+  "version": "0.1.0",
+  "description": "Sanasto application",
+  "dependencies": {
+    "fontawesome": "4.3.0",
+    "jquery": "2.1.3",
+    "bootstrap-css": "3.2.0"
+  }
+}

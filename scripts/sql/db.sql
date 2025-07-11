@@ -1,0 +1,5 @@
+DROP OWNED BY sanasto;
+DROP DATABASE IF EXISTS sanasto;
+DROP USER sanasto;
+
+CREATE DATABASE sanasto ENCODING 'utf8';
